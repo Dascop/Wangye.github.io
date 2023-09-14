@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 公共样式 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+    </style>
+    <!-- 对话框样式 -->
+    <style>
+
+
+        .box {
+            width: 500px;
+            height: auto;
+            background: rgb(255,255,255);
+            padding: 10px;
+            box-sizing: border-box;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body style="background-color: dimgrey">
+
+
+        <!-- 微信盒子 -->
+        <div class="box">
+
+
+        </div>
+    <!-- 侧边 功能区 -->
+
+
+
+        <button class="sj" style="margin-left: 800px; margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;font-size: 25px;" type="button">添加时间</button>
+
+
+
+
+
+
+
+<!-- 引入 emoji -->
+
+<script>
+
+
+    function test(test) {
+        test.parentNode.parentNode.removeChild(test.parentNode);
+    }
+    // -------------  添加对话框
+
+
+    // 获取组件盒子
+    let box = document.querySelector('.box')
+
+    // 添加时间
+    let addSj = document.querySelector('.sj')
+
+
+
+
+
+    // 添加时间
+    addSj.addEventListener('click', () => {
+        // 1. 创建一条数据
+        let itemDiv = document.createElement('div')
+        itemDiv.className = 'dialog-item'
+        itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 580px;' type='button' onclick='test(this)' value='删除'/>"
+        // 3. 创建对话框div
+        let dialogDiv = document.createElement('div')
+        dialogDiv.innerHTML = "<div style='width: 50px;height: 50px;background-color: red;margin-top: 20px; '></div>"
+        dialogDiv.setAttribute('contenteditable', true)
+        // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+        itemDiv.appendChild(dialogDiv)
+
+        // 5. 把单条数据添加到盒子中
+        box.appendChild(itemDiv)
+    })
+
+
+
+
+</script>
+
+</body>
+</html>
